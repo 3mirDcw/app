@@ -85,7 +85,7 @@ client.on('message', async message => {
   **==================================
 Beni Sunucuna Eklemek Istemen Beni Sevindiriyor Hemen Altta Linkimi Bula Bilirsin Sen Olmassan 1 kisi eksik
 
-[Ekleme Linkim](https://discord.com/api/oauth2/authorize?client_id=768080258326855692&permissions=8&scope=bot)
+[Ekleme Linkim](https://discord.com/oauth2/authorize?client_id=${client.user.id}&scope=bot&permissions=8)
 
 [Destek Sunucum](https://discord.gg/B2AS7WdfZB)
 
@@ -182,7 +182,7 @@ message.channel.send(Istatistik)
 💛 » [${prefix}say](https://discord.gg/B2AS7WdfZB) Total Ve Senin Link Sayini Atar
 `)
 .addField('**» Destek Sunucum**','[Destek Sunucum](https://discord.gg/B2AS7WdfZB)')
-.addField('**» Davet Linkim**','[Beni Davet Et](https://discord.com/oauth2/authorize?client_id=777843174504792115&permissions=8&scope=bot)')
+.addField('**» Davet Linkim**','[Beni Davet Et](https://discord.com/oauth2/authorize?client_id='+client.user.id+'&scope=bot&permissions=8)')
 .setImage('https://media.discordapp.net/attachments/761214958863122462/777849228805275648/standard.gif')
   message.channel.send(HugoMugo)
   }
@@ -267,4 +267,4 @@ client.on("message", async message => {
 const Log = message => {
 console.log(`${message}`)
 }
-client.login('Nzc3ODQzMTc0NTA0NzkyMTE1.X7JU6A.sO-vsKf1MfcTwf5sQ6CAZVYL-BU')
+client.login('')
