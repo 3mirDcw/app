@@ -6,7 +6,7 @@ const fs = require('fs')
 require('express')().listen(1343)
 const moment = require('moment')
 require('moment-duration-format')
-const prefix = 'um!'
+const prefix = 'lg!'
 
 setInterval(() => {
 const Linkler = db.get('Linkler')
@@ -46,7 +46,7 @@ client.on('message', async message => {
     .setTimestamp()
     .setThumbnail(message.author.avatarURL)
     if(db.get('Linkler').map(Dark => Dark.url).includes(Link)) return message.channel.send(Dark)
-    const Emrecan = new Discord.RichEmbed()
+    const dark = new Discord.RichEmbed()
     .setColor('GREEN')
     .setThumbnail(message.author.avatarURL)
     .setDescription(`
@@ -55,8 +55,8 @@ client.on('message', async message => {
     `)
     .addField(prefix+'linkler','Komutunu Kullanarak Ekledigin Linklere Erisebilirsin')
     .setTimestamp()
-    .setImage('https://cdn.discordapp.com/attachments/761214958863122462/777849228805275648/standard.gif')
-    message.channel.send(Emrecan)
+    .setImage('https://cdn.discordapp.com/attachments/772568404535410748/772709523814744074/10-30-59-1a97bbf1-c434-4c74-9509-8edc074a79db_standard.gif')
+    message.channel.send(dark)
     db.push('Linkler', { url: Link, owner: message.author.id, owner2: message.author.tag})
     db.add(`Sahiplik_${message.author.id}`,1)
     db.push(`Projesi_${message.author.id}`,Link)
@@ -79,7 +79,7 @@ client.on('message', async message => {
   }
 
   if(Split[0] == prefix+'davet') {
-  const Revo = new Discord.RichEmbed()
+  const dark1 = new Discord.RichEmbed()
   .setColor('#20aaba')
   .setDescription(`
   **==================================
@@ -93,12 +93,12 @@ Beni Sunucuna Eklemek Istemen Beni Sevindiriyor Hemen Altta Linkimi Bula Bilirsi
 ==================================
 **`)
   .setThumbnail(message.author.avatarURL)
-  .setImage('https://cdn.discordapp.com/attachments/761214958863122462/777849228805275648/standard.gif')
-  message.channel.send(Revo)
+  .setImage('https://cdn.discordapp.com/attachments/772568404535410748/772709523814744074/10-30-59-1a97bbf1-c434-4c74-9509-8edc074a79db_standard.gif')
+  message.channel.send(dark1)
   }
 
   if(Split[0] == prefix+'i') {
-  const Istatistik = new Discord.RichEmbed()
+  const dark7 = new Discord.RichEmbed()
   .setColor('#20aaba')
   .setThumbnail(message.author.avatarURL)
   .setTimestamp()
@@ -111,10 +111,10 @@ Beni Sunucuna Eklemek Istemen Beni Sevindiriyor Hemen Altta Linkimi Bula Bilirsi
 **✅ » Link Sayısı -** __${await db.fetch('Proje') || 1}__
 **✅ » Aktiflik Suresi -** __${moment.duration(client.uptime).format(" D [gün], H [saat], m [dakika], s [saniye]")}__
 **==================================**`)
-message.channel.send(Istatistik)
+message.channel.send(dark7)
   }
   if(Split[0] == prefix+'istatistik') {
-  const Istatistik = new Discord.RichEmbed()
+  const dark7 = new Discord.RichEmbed()
   .setColor('#20aaba')
   .setThumbnail(message.author.avatarURL)
   .setTimestamp()
@@ -127,11 +127,11 @@ message.channel.send(Istatistik)
 **✅ » Link Sayısı -** __${await db.fetch('Proje') || 1}__
 **✅ » Aktiflik Suresi -** __${moment.duration(client.uptime).format(" D [gün], H [saat], m [dakika], s [saniye]")}__
 **==================================**`)
-message.channel.send(Istatistik)
+message.channel.send(dark7)
   }
 
   if(Split[0] == prefix+'s') {
-  const Revoş = new Discord.RichEmbed()
+  const dark2 = new Discord.RichEmbed()
   .setColor('#20aaba')
   .setThumbnail(message.author.avatarURL)
   .setTimestamp()
@@ -141,10 +141,10 @@ message.channel.send(Istatistik)
 
 **» Bunlardan Sadece \`${db.fetch(`Sahiplik_${message.author.id}`) || null}\` Tanesi Senin ✅**
 ==================================`)
-  message.channel.send(Revoş)
+  message.channel.send(dark2)
   }
   if(Split[0] == prefix+'say') {
-  const Revoş = new Discord.RichEmbed()
+  const dark2 = new Discord.RichEmbed()
   .setColor('#20aaba')
   .setThumbnail(message.author.avatarURL)
   .setTimestamp()
@@ -154,11 +154,11 @@ message.channel.send(Istatistik)
 
 **» Bunlardan Sadece \`${db.fetch(`Sahiplik_${message.author.id}`) || null}\` Tanesi Senin ✅**
 ==================================`)
-  message.channel.send(Revoş)
+  message.channel.send(dark2)
   }
 
   if(Split[0] == prefix+'yardım') {
-  const HugoMugo = new Discord.RichEmbed()
+  const dark3 = new Discord.RichEmbed()
   .setColor('#20aaba')
   .setThumbnail(message.author.avatarURL)
   .setTimestamp()
@@ -170,21 +170,21 @@ message.channel.send(Istatistik)
 » Dil: **TR**
 `)
   .addField('**» Uptime Bot Komutlari**',`
-💛 » [${prefix}link-kaldır](https://discord.gg/B2AS7WdfZB) Link Kaldırmanıza Yarar
-💛 » [${prefix}ekle](https://discord.gg/B2AS7WdfZB) Link Eklemenize Yarar
-💛 » [${prefix}erişim-kontrol](https://discord.gg/B2AS7WdfZB) Erişim Kontrol
-💛 » [${prefix}linkler](https://discord.gg/B2AS7WdfZB) Liklerinizi Gösterir
+💛 » [${prefix}link-kaldır](sunucudavetlinki) Link Kaldırmanıza Yarar
+💛 » [${prefix}ekle](sunucudavetlinki) Link Eklemenize Yarar
+💛 » [${prefix}erişim-kontrol](sunucudavetlinki) Erişim Kontrol
+💛 » [${prefix}linkler](sunucudavetlinki) Liklerinizi Gösterir
 `)
   .addField('**» Genel Komutlar**',`
-💛 » [${prefix}dil](https://discord.gg/B2AS7WdfZB) Botun Dlini Ayarlar
-💛 » [${prefix}davet](https://discord.gg/B2AS7WdfZB) Botun Davet Linkini Atar
-💛 » [${prefix}istatistik](https://discord.gg/B2AS7WdfZB) Bot Istatistigini Atar
-💛 » [${prefix}say](https://discord.gg/B2AS7WdfZB) Total Ve Senin Link Sayini Atar
+💛 » [${prefix}dil](sunucudavetlinki) Botun Dlini Ayarlar
+💛 » [${prefix}davet](sunucudavetlinki) Botun Davet Linkini Atar
+💛 » [${prefix}istatistik](sunucudavetlinki) Bot Istatistigini Atar
+💛 » [${prefix}say](sunucudavetlinki) Total Ve Senin Link Sayini Atar
 `)
-.addField('**» Destek Sunucum**','[Destek Sunucum](https://discord.gg/B2AS7WdfZB)')
+.addField('**» Destek Sunucum**','[Destek Sunucum](sunucudavetlinki)')
 .addField('**» Davet Linkim**','[Beni Davet Et](https://discord.com/oauth2/authorize?client_id='+client.user.id+'&scope=bot&permissions=8)')
-.setImage('https://media.discordapp.net/attachments/761214958863122462/777849228805275648/standard.gif')
-  message.channel.send(HugoMugo)
+.setImage('https://media.discordapp.net/attachments/772568404535410748/772709523814744074/10-30-59-1a97bbf1-c434-4c74-9509-8edc074a79db_standard.gif')
+  message.channel.send(dark3)
   }
 
     if(Split[0] == prefix+'linkler') {
@@ -202,21 +202,21 @@ message.channel.send(Istatistik)
 
  **DİLLER** 
  \`EN,TR\``)
-const Mevenge = new Discord.RichEmbed()
+const dark4 = new Discord.RichEmbed()
 .setColor('GREEN')
 .setTitle('Dil Değiştirildi.')
 .setDescription('Botun dili başarıyla **TÜRKÇE** olarak kaydedildi.')
-message.channel.send(Mevenge).then(x => x.react('✅'))
+message.channel.send(dark4).then(x => x.react('✅'))
    }
 
     if(Split[0] == prefix+'erişim-kontrol') {
-const Megenge = new Discord.RichEmbed()
+const dark5 = new Discord.RichEmbed()
 .setColor('#20aaba')
 .setThumbnail(message.author.avatarURL)
 .setTimestamp()
 .setTitle('🎈 Erişim Kontrol')
 .setDescription('**» Erişiminiz Aktif**')
-message.channel.send(Megenge)
+message.channel.send(dark5)
 }
 })
 
