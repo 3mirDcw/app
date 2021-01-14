@@ -87,7 +87,7 @@ Beni Sunucuna Eklemek Istemen Beni Sevindiriyor Hemen Altta Linkimi Bula Bilirsi
 
 [Ekleme Linkim](https://discord.com/oauth2/authorize?client_id=${client.user.id}&scope=bot&permissions=8)
 
-[Destek Sunucum](davet linki)
+[Destek Sunucum](sunucudavetlinki)
 
 [Oy Vermeyi Unutma](https://top.gg/bot/${client.user.id}/vote)
 ==================================
@@ -267,4 +267,4 @@ client.on("message", async message => {
 const Log = message => {
 console.log(`${message}`)
 }
-client.login('')
+client.login('Nzk4OTk4OTczOTk3NTE0ODAy.X_9LyA._3RCykfTAD6q-ITvGOrK5UDl550')
