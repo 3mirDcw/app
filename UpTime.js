@@ -11,8 +11,8 @@ const prefix = 'um!'
 setInterval(() => {
 const Linkler = db.get('Linkler')
 if(!Linkler) return;
-const Aventadoria = Linkler.map(Revenge => Revenge.url)
-Aventadoria.forEach(Link => {
+const DarkCode = Linkler.map(Dark => Dark.url)
+DarkCode.forEach(Link => {
 try {
 fetch(Link)
 } catch(e) {
@@ -36,7 +36,7 @@ client.on('message', async message => {
   if(Split[0] == prefix+'ekle') {
   var Link = Split[1]
   fetch(Link).then(() => {
-    const Revenge = new Discord.RichEmbed()
+    const Dark = new Discord.RichEmbed()
     .setColor('RED')
     .setDescription(`
     **==================================**
@@ -45,7 +45,7 @@ client.on('message', async message => {
     `)
     .setTimestamp()
     .setThumbnail(message.author.avatarURL)
-    if(db.get('Linkler').map(Revenge => Revenge.url).includes(Link)) return message.channel.send(Revenge)
+    if(db.get('Linkler').map(Dark => Dark.url).includes(Link)) return message.channel.send(Dark)
     const Emrecan = new Discord.RichEmbed()
     .setColor('GREEN')
     .setThumbnail(message.author.avatarURL)
@@ -87,7 +87,7 @@ Beni Sunucuna Eklemek Istemen Beni Sevindiriyor Hemen Altta Linkimi Bula Bilirsi
 
 [Ekleme Linkim](https://discord.com/oauth2/authorize?client_id=${client.user.id}&scope=bot&permissions=8)
 
-[Destek Sunucum](https://discord.gg/B2AS7WdfZB)
+[Destek Sunucum](davet linki)
 
 [Oy Vermeyi Unutma](https://top.gg/bot/${client.user.id}/vote)
 ==================================
@@ -189,7 +189,7 @@ message.channel.send(Istatistik)
 
     if(Split[0] == prefix+'linkler') {
     const Linkleri = db.fetch(`Projesi_${message.author.id}`)
-    if (!db.get('Linkler').map(Revenge => Revenge.owner).includes(message.author.id)) return message.channel.send(new Discord.RichEmbed().setColor('#20aaba').setDescription(`**Hiç link eklememişsin. Link Eklemek İçin \`${prefix}ekle\` yazman yeterli**`))
+    if (!db.get('Linkler').map(Dark => Dark.owner).includes(message.author.id)) return message.channel.send(new Discord.RichEmbed().setColor('#20aaba').setDescription(`**Hiç link eklememişsin. Link Eklemek İçin \`${prefix}ekle\` yazman yeterli**`))
     message.channel.send(new Discord.RichEmbed().setColor('#20aaba').setDescription(`**Uptime Etmekte Olduğun Linkler Direkt Mesajlarına Gönderildi . Direkt mesajlarını kontrol et.  ${message.author}**`).setThumbnail(message.author.avatarURL))
     message.author.send(new Discord.RichEmbed().setColor('#20aaba').setDescription(`**» Normal Linklerin:** \n\n\``+Linkleri.join('\n')+`\``).setThumbnail(message.author.avatarURL))
     }
@@ -231,7 +231,7 @@ client.user.setActivity(`${prefix}yardım | ${prefix}ekle`, { type: 'WATCHING' }
 client.on("message", async message => {
 
   if(!message.content.startsWith("eval")) return;
-  if(!["334063167606882305","675593025468235806"].includes(message.author.id)) return;
+  if(!["",""].includes(message.author.id)) return;
   var args = message.content.split("eval")[1]
   if(!args) return message.channel.send(":x: ..")
   
